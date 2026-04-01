@@ -60,7 +60,6 @@
       to   { transform: scale(1.00); }
     }
 
-    /* Fallback gradient when no photo is present */
     .hero-bg-fallback {
       position: absolute;
       inset: 0;
@@ -162,7 +161,6 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── NAV DOTS ─────────────────────────────────────── */
     .section-divider {
       width: 48px;
       height: 2px;
@@ -170,7 +168,6 @@
       margin: 0 auto 2.4rem;
     }
 
-    /* ── ABOUT ────────────────────────────────────────── */
     .about {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -191,7 +188,6 @@
       min-height: 420px;
     }
 
-    /* ── SECTION LABELS ───────────────────────────────── */
     .eyebrow {
       font-size: 0.7rem;
       letter-spacing: 0.28em;
@@ -214,7 +210,6 @@
     p { margin-bottom: 1rem; color: #3D3228; }
     p:last-child { margin-bottom: 0; }
 
-    /* ── HIGHLIGHTS ───────────────────────────────────── */
     .highlights {
       background: var(--pine);
       padding: 5rem 6vw;
@@ -242,10 +237,7 @@
       background: rgba(255,255,255,0.04);
     }
 
-    .highlight-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-    }
+    .highlight-icon { font-size: 1.8rem; margin-bottom: 1rem; }
 
     .highlight-card h3 {
       font-family: 'Cormorant Garamond', serif;
@@ -255,22 +247,10 @@
       margin-bottom: 0.6rem;
     }
 
-    .highlight-card p {
-      font-size: 0.9rem;
-      color: rgba(244,239,228,0.65);
-      margin: 0;
-    }
+    .highlight-card p { font-size: 0.9rem; color: rgba(244,239,228,0.65); margin: 0; }
 
-    /* ── GALLERY ──────────────────────────────────────── */
-    .gallery-section {
-      padding: 5rem 4vw;
-      background: var(--white);
-    }
-
-    .gallery-section .section-header {
-      text-align: center;
-      margin-bottom: 2.4rem;
-    }
+    .gallery-section { padding: 5rem 4vw; background: var(--white); }
+    .gallery-section .section-header { text-align: center; margin-bottom: 2.4rem; }
 
     .gallery-grid {
       display: grid;
@@ -287,129 +267,33 @@
       transition: transform 0.3s;
     }
     .gallery-item:hover { transform: scale(1.015); z-index: 1; }
-
     .gallery-item.tall { grid-row: span 2; }
-
     .gallery-item-1 { background-image: url('photos/gallery1.jpg'); }
     .gallery-item-2 { background-image: url('photos/gallery2.jpg'); }
     .gallery-item-3 { background-image: url('photos/gallery3.jpg'); }
     .gallery-item-4 { background-image: url('photos/gallery4.jpg'); }
 
-    /* Placeholder overlay for missing photos */
-    .gallery-item::after {
-      content: attr(data-label);
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--stone);
-      background: var(--parchment);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    /* show label only when no background image loaded — handled via onerror in JS */
+    .location { display: grid; grid-template-columns: 1fr 1fr; }
+    .location-text { background: var(--parchment); padding: 5rem 5vw; display: flex; flex-direction: column; justify-content: center; }
+    .location-map { min-height: 420px; position: relative; }
+    .location-map iframe { width: 100%; height: 100%; border: 0; display: block; min-height: 420px; filter: sepia(20%) saturate(85%); }
 
-    /* ── MAP & LOCATION ───────────────────────────────── */
-    .location {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+    .ymca-link { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1.8rem; font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pine); text-decoration: none; border: 1px solid var(--copper); padding: 0.75rem 1.4rem; transition: background 0.2s, color 0.2s; width: fit-content; }
+    .ymca-link:hover { background: var(--pine); color: var(--cream); border-color: var(--pine); }
 
-    .location-text {
-      background: var(--parchment);
-      padding: 5rem 5vw;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .location-map {
-      min-height: 420px;
-      position: relative;
-    }
-
-    .location-map iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      display: block;
-      min-height: 420px;
-      filter: sepia(20%) saturate(85%);
-    }
-
-    .ymca-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 1.8rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--pine);
-      text-decoration: none;
-      border: 1px solid var(--copper);
-      padding: 0.75rem 1.4rem;
-      transition: background 0.2s, color 0.2s;
-      width: fit-content;
-    }
-    .ymca-link:hover {
-      background: var(--pine);
-      color: var(--cream);
-      border-color: var(--pine);
-    }
-
-    /* ── FOOTER ───────────────────────────────────────── */
-    footer {
-      background: var(--pine);
-      padding: 3rem 6vw;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1.2rem;
-    }
-
-    footer .footer-brand {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: var(--cream);
-      letter-spacing: 0.04em;
-    }
-
-    footer p {
-      font-size: 0.78rem;
-      color: rgba(244,239,228,0.5);
-      margin: 0;
-      letter-spacing: 0.06em;
-    }
-
-    footer a {
-      color: rgba(244,239,228,0.65);
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    footer { background: var(--pine); padding: 3rem 6vw; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.2rem; }
+    footer .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--cream); letter-spacing: 0.04em; }
+    footer p { font-size: 0.78rem; color: rgba(244,239,228,0.5); margin: 0; letter-spacing: 0.06em; }
+    footer a { color: rgba(244,239,228,0.65); font-size: 0.78rem; letter-spacing: 0.1em; text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
     footer a:hover { color: var(--copper); }
 
-    /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 800px) {
       .about, .location { grid-template-columns: 1fr; }
       .about-image { min-height: 280px; order: -1; }
-      .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 200px 200px 200px;
-      }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px 200px; }
       .gallery-item.tall { grid-row: span 1; }
       footer { flex-direction: column; text-align: center; }
     }
-
     @media (max-width: 500px) {
       .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
       .gallery-item { height: 220px; }
@@ -418,94 +302,40 @@
   </style>
 </head>
 <body>
-
-  <!-- ── HERO ──────────────────────────────────────────── -->
   <section class="hero">
     <div class="hero-bg-fallback"></div>
     <div class="hero-bg" aria-hidden="true"></div>
-
-    <a href="https://ymcarockies.org" target="_blank" rel="noopener" class="hero-badge">
-      ↗ YMCA of the Rockies
-    </a>
-
+    <a href="https://ymcarockies.org" target="_blank" rel="noopener" class="hero-badge">↷ YMCA of the Rockies</a>
     <div class="hero-content">
       <p class="hero-eyebrow">Estes Park, Colorado &nbsp;·&nbsp; Rocky Mountain National Park</p>
       <h1 class="hero-title">A Home<br><em>Inside the Mountains</em></h1>
-      <p class="hero-sub">
-        A rare private residence nestled within the historic grounds of the YMCA of the Rockies —
-        where the elk roam and the peaks are always in view.
-      </p>
-      <a href="#about" class="hero-cta">
-        Discover the Property
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+      <p class="hero-sub">A rare private residence nestled within the historic grounds of the YMCA of the Rockies — where the elk roam and the peaks are always in view.</p>
+      <a href="#about" class="hero-cta">Discover the Property <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </section>
-
-  <!-- ── ABOUT ─────────────────────────────────────────── -->
   <section class="about" id="about">
     <div class="about-text">
       <p class="eyebrow">The Property</p>
       <h2>A Setting <em>Unlike Any Other</em></h2>
-      <p>
-        Situated within the storied 860-acre grounds of the YMCA of the Rockies in Estes Park,
-        Colorado, this private home occupies one of the most extraordinary addresses in the American West.
-        With Rocky Mountain National Park at your doorstep, you are surrounded by wilderness, wildlife,
-        and a quiet that only the high country can offer.
-      </p>
-      <p>
-        The YMCA of the Rockies has been a cherished mountain retreat since 1908. To hold a home
-        within these grounds is to be part of a living legacy — a community of families, nature,
-        and the enduring spirit of the Rockies.
-      </p>
-      <p>
-        This is not a typical mountain cabin. It is a place of genuine rarity: private, serene,
-        and woven into one of Colorado's most beloved landscapes.
-      </p>
+      <p>Situated within the storied 860-acre grounds of the YMCA of the Rockies in Estes Park, Colorado, this private home occupies one of the most extraordinary addresses in the American West. With Rocky Mountain National Park at your doorstep, you are surrounded by wilderness, wildlife, and a quiet that only the high country can offer.</p>
+      <p>The YMCA of the Rockies has been a cherished mountain retreat since 1908. To hold a home within these grounds is to be part of a living legacy — a community of families, nature, and the enduring spirit of the Rockies.</p>
+      <p>This is not a typical mountain cabin. It is a place of genuine rarity: private, serene, and woven into one of Colorado's most beloved landscapes.</p>
     </div>
     <div class="about-image" role="img" aria-label="Interior or exterior view of the home"></div>
   </section>
-
-  <!-- ── HIGHLIGHTS ────────────────────────────────────── -->
   <section class="highlights">
     <p class="eyebrow">What Makes It Unique</p>
     <h2>Life on <em>Sacred Ground</em></h2>
     <div class="section-divider"></div>
-
     <div class="highlights-grid">
-      <div class="highlight-card">
-        <div class="highlight-icon">🏔️</div>
-        <h3>Rocky Mountain National Park</h3>
-        <p>Direct access to one of America's most celebrated national parks — literally outside your door.</p>
-      </div>
-      <div class="highlight-card">
-        <div class="highlight-icon">🦌</div>
-        <h3>Wildlife &amp; Nature</h3>
-        <p>Elk, deer, and abundant wildlife roam freely across the YMCA's expansive grounds year-round.</p>
-      </div>
-      <div class="highlight-card">
-        <div class="highlight-icon">🏡</div>
-        <h3>Private Residence</h3>
-        <p>A truly rare opportunity — a personal home within the historic YMCA of the Rockies campus.</p>
-      </div>
-      <div class="highlight-card">
-        <div class="highlight-icon">⛷️</div>
-        <h3>Year-Round Access</h3>
-        <p>Hiking, snowshoeing, climbing, and stargazing — every season brings something extraordinary.</p>
-      </div>
+      <div class="highlight-card"><div class="highlight-icon">🏔️</div><h3>Rocky Mountain National Park</h3><p>Direct access to one of America's most celebrated national parks — literally outside your door.</p></div>
+      <div class="highlight-card"><div class="highlight-icon">🦌</div><h3>Wildlife &amp; Nature</h3><p>Elk, deer, and abundant wildlife roam freely across the YMCA's expansive grounds year-round.</p></div>
+      <div class="highlight-card"><div class="highlight-icon">🏡</div><h3>Private Residence</h3><p>A truly rare opportunity — a personal home within the historic YMCA of the Rockies campus.</p></div>
+      <div class="highlight-card"><div class="highlight-icon">⛻️</div><h3>Year-Round Access</h3><p>Hiking, snowshoeing, climbing, and stargazing — every season brings something extraordinary.</p></div>
     </div>
   </section>
-
-  <!-- ── GALLERY ────────────────────────────────────────── -->
   <section class="gallery-section" id="gallery">
-    <div class="section-header">
-      <p class="eyebrow">Photo Gallery</p>
-      <h2>The <em>Views &amp; Spaces</em></h2>
-      <div class="section-divider"></div>
-    </div>
-
+    <div class="section-header"><p><p>Photo Gallery</p><h2>The <em>Views &amp; Spaces</em></h2><div class="section-divider"></div></div>
     <div class="gallery-grid">
       <div class="gallery-item gallery-item-1 tall" data-label="Main View"></div>
       <div class="gallery-item gallery-item-2" data-label="Interior"></div>
@@ -513,71 +343,24 @@
       <div class="gallery-item gallery-item-4" data-label="Surroundings"></div>
     </div>
   </section>
-
-  <!-- ── LOCATION ───────────────────────────────────────── -->
   <section class="location" id="location">
     <div class="location-text">
       <p class="eyebrow">Location</p>
       <h2>Estes Park, <em>Colorado</em></h2>
-      <p>
-        The YMCA of the Rockies sits at 8,000 feet elevation, just two miles from the entrance to
-        Rocky Mountain National Park and a short drive from the charming town of Estes Park. Denver
-        is approximately 75 miles to the south.
-      </p>
-      <p>
-        The campus itself offers swimming, tennis, hiking trails, a chapel, dining, and a deep sense
-        of community that has welcomed generations of families since 1908.
-      </p>
-      <a href="https://ymcarockies.org" target="_blank" rel="noopener" class="ymca-link">
-        ↗ &nbsp; Visit YMCA of the Rockies
-      </a>
+      <p>The YMCA of the Rockies sits at 8,000 feet elevation, just two miles from the entrance to Rocky Mountain National Park and a short drive from the charming town of Estes Park. Denver is approximately 75 miles to the south.</p>
+      <p>The campus itself offers swimming, tennis, hiking trails, a chapel, dining, and a deep sense of community that has welcomed generations of families since 1908.</p>
+      <a href="https://ymcarockies.org" target="_blank" rel="noopener" class="ymca-link">↷ &nbsp; Visit YMCA of the Rockies</a>
     </div>
-    <div class="location-map">
-      <iframe
-        title="YMCA of the Rockies, Estes Park, Colorado"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.9!2d-105.6!3d40.34!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876978e7e78d1f5b%3A0x5f7b2c3b7e2e0f1a!2sYMCA+of+the+Rockies!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
-        allowfullscreen>
-      </iframe>
-    </div>
+    <div class="location-map"><iframe title="YMCA of the Rockies" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.9!2d-105.6!3d40.34!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876978e7e78d1f5b%3A0x5f7b2c3b7e2e0f1a!2sYMCA+of+the+Rockies!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" allowfullscreen></iframe></div>
   </section>
-
-  <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer>
     <div class="footer-brand">Jeff &amp; Lisa</div>
     <p>Estes Park, Colorado &nbsp;·&nbsp; YMCA of the Rockies</p>
     <a href="https://ymcarockies.org" target="_blank" rel="noopener">ymcarockies.org ↗</a>
   </footer>
-
   <script>
-    // Smooth reveal on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.opacity = '1';
-          e.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.about-text, .highlight-card, .gallery-item, .location-text').forEach(el => {
-      el.style.cssText += 'opacity:0; transform:translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease;';
-      observer.observe(el);
-    });
-
-    // Show placeholder label for gallery items with no photo loaded
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      const style = window.getComputedStyle(item);
-      const bg = style.backgroundImage;
-      if (!bg || bg === 'none') {
-        item.style.background = 'var(--parchment)';
-        const label = document.createElement('div');
-        label.textContent = '[ ' + (item.getAttribute('data-label') || 'Photo') + ' ]';
-        label.style.cssText = 'display:flex;align-items:center;justify-content:center;height:100%;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--stone);';
-        item.appendChild(label);
-      }
-    });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.1 });
+    document.querySelectorAll('.about-text, .highlight-card, .gallery-item, .location-text').forEach(el => { el.style.cssText += 'opacity:0; transform:translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease;'; observer.observe(el); });
   </script>
 </body>
 </html>

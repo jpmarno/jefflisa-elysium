@@ -100,6 +100,10 @@
     .map-card .map-link:hover{color:var(--pine);}
     .map-card .drive-time{display:inline-block;background:var(--copper);color:var(--white);padding:0.3rem 0.7rem;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.7rem;border-radius:2px;align-self:flex-start;}
 
+    
+    .map-image-tap{position:relative;border:0;padding:0;cursor:zoom-in;background-color:var(--stone);}
+    .map-image-tap .map-tap-hint{position:absolute;bottom:0.6rem;right:0.6rem;background:rgba(20,30,20,0.78);color:var(--cream);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.35rem 0.65rem;border-radius:2px;pointer-events:none;}
+
     /* --- Memories from the Mountain (full scroll gallery) --- */
     .memories{padding:5rem 6vw;background:var(--parchment);}
     .memories .section-header{text-align:center;margin-bottom:3rem;max-width:680px;margin-left:auto;margin-right:auto;}
@@ -186,10 +190,12 @@
     </div>
     <div class="map-cards">
       <article class="map-card">
-        <div class="map-image" style="background-image:url('photos/maps/campus.jpg');" role="img" aria-label="YMCA campus map showing the home"></div>
+        <button class="map-image map-image-tap" type="button" data-full="photos/maps/campus-full.jpg" style="background-image:url('photos/maps/campus.jpg');" aria-label="Open campus map">
+          <span class="map-tap-hint">Tap to enlarge</span>
+        </button>
         <h3>The Home on the Grounds</h3>
-        <p>Where Elysium sits within the 860-acre YMCA of the Rockies campus.</p>
-        <a class="map-link" href="https://assets.milestoneinternet.com/ymca-of-the-rockies/ymca-of-the-rockies-estes-park-family-resort-and-cabins-394203-3/website-assets/pdf/2025-ymca-web-map-final.pdf">Open Property Map &rarr;</a>
+        <p>Where Elysium sits within the 860-acre YMCA of the Rockies campus &mdash; look for the red star.</p>
+        <a class="map-link" href="https://assets.milestoneinternet.com/ymca-of-the-rockies/ymca-of-the-rockies-estes-park-family-resort-and-cabins-394203-3/website-assets/pdf/2025-ymca-web-map-final.pdf">Open Y's Property Map &rarr;</a>
       </article>
       <article class="map-card">
         <div class="map-image" style="background-image:url('photos/maps/area.jpg');" role="img" aria-label="YMCA in relation to RMNP and Estes Park"></div>
@@ -432,6 +438,9 @@
       function close(){ lb.classList.remove('is-open'); lbImg.src=''; document.body.style.overflow=''; }
       document.querySelectorAll('.memory-item img').forEach(img=>{
         img.addEventListener('click', ()=> open(img.dataset.full || img.src));
+      });
+      document.querySelectorAll('.map-image-tap').forEach(btn=>{
+        btn.addEventListener('click', ()=> open(btn.dataset.full));
       });
       lb.addEventListener('click', e => { if(e.target===lb || e.target===closeBtn) close(); });
       closeBtn.addEventListener('click', close);

@@ -69,6 +69,37 @@
     @media(max-width:800px){.about,.location{grid-template-columns:1fr;}.about-image{min-height:280px;order:-1;}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px;}.gallery-item.tall{grid-row:span 1;}footer{flex-direction:column;text-align:center;}}
     @media(max-width:500px){.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto;}.gallery-item{height:220px;}.hero-badge{top:1rem;right:1rem;font-size:0.65rem;}}
   
+    /* --- Sticky top nav --- */
+    .topnav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,250,245,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(184,115,51,0.18);padding:0.7rem 4vw;display:flex;align-items:center;justify-content:space-between;gap:1rem;transform:translateY(-100%);transition:transform 0.35s ease;}
+    .topnav.is-visible{transform:translateY(0);}
+    .topnav-brand{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--pine);font-weight:400;text-decoration:none;letter-spacing:0.02em;}
+    .topnav-links{display:flex;gap:1.4rem;align-items:center;flex-wrap:wrap;}
+    .topnav-links a{font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--pine);text-decoration:none;font-weight:400;transition:color 0.2s;}
+    .topnav-links a:hover{color:var(--copper);}
+    @media(max-width:600px){.topnav{padding:0.55rem 4vw;}.topnav-brand{font-size:1.1rem;}.topnav-links{gap:0.9rem;}.topnav-links a{font-size:0.62rem;letter-spacing:0.12em;}}
+
+    /* --- Quick links bar --- */
+    .quicklinks{background:var(--cream);padding:2rem 4vw;border-bottom:1px solid rgba(184,115,51,0.14);}
+    .quicklinks-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:0.8rem;justify-content:center;align-items:center;}
+    .quicklink{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--pine);text-decoration:none;border:1px solid var(--copper);padding:0.7rem 1.2rem;border-radius:2px;transition:background 0.2s,color 0.2s;background:var(--white);}
+    .quicklink:hover{background:var(--pine);color:var(--cream);border-color:var(--pine);}
+    .quicklink.primary{background:var(--pine);color:var(--cream);}
+    .quicklink.primary:hover{background:var(--copper);border-color:var(--copper);}
+    @media(max-width:600px){.quicklinks{padding:1.4rem 4vw;}.quicklink{font-size:0.66rem;letter-spacing:0.12em;padding:0.6rem 0.95rem;flex:1 1 auto;justify-content:center;}}
+
+    /* --- Maps & Directions section --- */
+    .maps{padding:5rem 6vw;background:var(--white);}
+    .maps .section-header{text-align:center;margin-bottom:3rem;max-width:680px;margin:0 auto 3rem;}
+    .map-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto;}
+    .map-card{background:var(--parchment);border:1px solid rgba(184,115,51,0.18);border-radius:2px;padding:1.6rem;display:flex;flex-direction:column;transition:border-color 0.2s,transform 0.2s;}
+    .map-card:hover{border-color:var(--copper);transform:translateY(-2px);}
+    .map-card h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;color:var(--pine);margin-bottom:0.5rem;}
+    .map-card .map-image{width:100%;aspect-ratio:16/10;background:var(--stone) center/cover no-repeat;border-radius:2px;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;color:rgba(244,239,228,0.7);font-style:italic;font-size:0.85rem;}
+    .map-card p{font-size:0.95rem;color:#3D3228;margin-bottom:1rem;}
+    .map-card .map-link{margin-top:auto;display:inline-flex;align-items:center;gap:0.4rem;font-size:0.74rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--copper);text-decoration:none;font-weight:500;}
+    .map-card .map-link:hover{color:var(--pine);}
+    .map-card .drive-time{display:inline-block;background:var(--copper);color:var(--white);padding:0.3rem 0.7rem;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.7rem;border-radius:2px;align-self:flex-start;}
+
     /* --- Memories from the Mountain (full scroll gallery) --- */
     .memories{padding:5rem 6vw;background:var(--parchment);}
     .memories .section-header{text-align:center;margin-bottom:3rem;max-width:680px;margin-left:auto;margin-right:auto;}
@@ -76,27 +107,49 @@
     .memories-feed{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:1.4rem;}
     .memory-item{margin:0;border-radius:2px;overflow:hidden;background:var(--stone);box-shadow:0 4px 18px rgba(44,62,45,0.08);cursor:zoom-in;}
     .memory-item img{display:block;width:100%;height:auto;object-fit:cover;}
-    /* Lightbox */
+
+    /* --- Lightbox --- */
     .lightbox{position:fixed;inset:0;background:rgba(20,28,22,0.94);z-index:9999;display:none;align-items:center;justify-content:center;padding:2vw;cursor:zoom-out;}
     .lightbox.is-open{display:flex;}
     .lightbox img{max-width:96vw;max-height:94vh;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,0.6);}
     .lightbox-close{position:absolute;top:1.2rem;right:1.4rem;background:transparent;border:1px solid rgba(244,239,228,0.4);color:var(--cream);font-size:1.4rem;width:2.4rem;height:2.4rem;line-height:1;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;}
     .lightbox-close:hover{border-color:var(--copper);color:var(--copper);}
-    @media(max-width:600px){.memories{padding:3.5rem 4vw;}.memories-feed{gap:1rem;}}
+    @media(max-width:600px){.memories{padding:3.5rem 4vw;}.memories-feed{gap:1rem;}.maps{padding:3.5rem 4vw;}}
 
   </style>
 </head>
-<body>
+<body id="top">
+
+  <nav class="topnav" id="topnav" aria-label="Primary">
+    <a href="#top" class="topnav-brand">Elysium</a>
+    <div class="topnav-links">
+      <a href="#maps">Maps</a>
+      <a href="#memories">Photos</a>
+      <a href="https://www.ymcarockies.org/things-to-do/activities">Activities</a>
+      <a href="https://www.ymcarockies.org/our-locations/estes-park-center">YMCA</a>
+    </div>
+  </nav>
+
   <section class="hero">
     <div class="hero-bg-fallback"></div>
     <div class="hero-bg" aria-hidden="true"></div>
-    <a href="https://www.ymcarockies.org/our-locations/estes-park-center" target="_blank" rel="noopener" class="hero-badge">YMCA of the Rockies</a>
+    <a href="https://www.ymcarockies.org/our-locations/estes-park-center" class="hero-badge">YMCA of the Rockies</a>
     <div class="hero-content">
       <div class="hero-name">Elysium</div>
       <p class="hero-eyebrow">Estes Park, Colorado &nbsp;&middot;&nbsp; Rocky Mountain National Park</p>
       <h1 class="hero-title">A Home<br><em>Inside the Mountains</em></h1>
       <p class="hero-sub">A rare private residence nestled within the historic grounds of the YMCA of the Rockies &mdash; where the elk roam and the peaks are always in view.</p>
       <a href="#about" class="hero-cta">Discover the Property</a>
+    </div>
+  </section>
+
+  
+  <section class="quicklinks" aria-label="Quick links">
+    <div class="quicklinks-inner">
+      <a class="quicklink primary" href="#maps">Maps &amp; Directions</a>
+      <a class="quicklink" href="https://www.ymcarockies.org/things-to-do/activities">Y Activities</a>
+      <a class="quicklink" href="https://www.ymcarockies.org/our-locations/estes-park-center">YMCA Estes Park</a>
+      <a class="quicklink" href="#memories">Photos</a>
     </div>
   </section>
 
@@ -120,6 +173,37 @@
       <div class="highlight-card"><div class="highlight-icon">&#129420;</div><h3>Wildlife &amp; Nature</h3><p>Elk, deer, and abundant wildlife roam freely across the YMCA's expansive grounds year-round.</p></div>
       <div class="highlight-card"><div class="highlight-icon">&#127969;</div><h3>Private Residence</h3><p>A truly rare opportunity &mdash; a personal home within the historic YMCA of the Rockies campus.</p></div>
       <div class="highlight-card"><div class="highlight-icon">&#9975;</div><h3>Year-Round Access</h3><p>Hiking, snowshoeing, climbing, and stargazing &mdash; every season brings something extraordinary.</p></div>
+    </div>
+  </section>
+
+  
+  <section class="maps" id="maps">
+    <div class="section-header">
+      <p class="eyebrow">Plan Your Visit</p>
+      <h2>Maps &amp; <em>Directions</em></h2>
+      <div class="section-divider"></div>
+      <p>Where the home sits, and how to get there.</p>
+    </div>
+    <div class="map-cards">
+      <article class="map-card">
+        <div class="map-image" style="background-image:url('photos/maps/campus.jpg');" role="img" aria-label="YMCA campus map showing the home"></div>
+        <h3>The Home on the Grounds</h3>
+        <p>Where Elysium sits within the 860-acre YMCA of the Rockies campus.</p>
+        <a class="map-link" href="https://assets.milestoneinternet.com/ymca-of-the-rockies/ymca-of-the-rockies-estes-park-family-resort-and-cabins-394203-3/website-assets/pdf/2025-ymca-web-map-final.pdf">Open Property Map &rarr;</a>
+      </article>
+      <article class="map-card">
+        <div class="map-image" style="background-image:url('photos/maps/area.jpg');" role="img" aria-label="YMCA in relation to RMNP and Estes Park"></div>
+        <h3>YMCA, RMNP &amp; Estes Park</h3>
+        <p>The campus sits between Rocky Mountain National Park and the town of Estes Park &mdash; both within minutes.</p>
+        <a class="map-link" href="https://www.google.com/maps/place/YMCA+of+the+Rockies/@40.3206,-105.5826,13z">Open in Google Maps &rarr;</a>
+      </article>
+      <article class="map-card">
+        <div class="map-image" style="background-image:url('photos/maps/drive.jpg');" role="img" aria-label="Drive from Denver International Airport"></div>
+        <span class="drive-time">~1 hr 35 min from DIA</span>
+        <h3>Drive from Denver</h3>
+        <p>Denver International Airport to the YMCA: roughly 75 miles north and west, an easy drive of about 1 hour 35 minutes.</p>
+        <a class="map-link" href="https://www.google.com/maps/dir/Denver+International+Airport/YMCA+of+the+Rockies">Get Directions &rarr;</a>
+      </article>
     </div>
   </section>
 
@@ -322,7 +406,7 @@
       <h2>Estes Park, <em>Colorado</em></h2>
       <p>The YMCA of the Rockies sits at 8,000 feet elevation, just two miles from the entrance to Rocky Mountain National Park and a short drive from the charming town of Estes Park. Denver is approximately 75 miles to the south.</p>
       <p>The campus itself offers swimming, tennis, hiking trails, a chapel, dining, and a deep sense of community that has welcomed generations of families since 1908.</p>
-      <a href="https://www.ymcarockies.org/our-locations/estes-park-center" target="_blank" rel="noopener" class="ymca-link">Visit YMCA of the Rockies</a>
+      <a href="https://www.ymcarockies.org/our-locations/estes-park-center" class="ymca-link">Visit YMCA of the Rockies</a>
     </div>
     <div class="location-map">
       <iframe title="YMCA of the Rockies, Estes Park, Colorado" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3046.9!2d-105.6!3d40.34!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876978e7e78d1f5b%3A0x5f7b2c3b7e2e0f1a!2sYMCA+of+the+Rockies!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus" allowfullscreen></iframe>
@@ -332,12 +416,12 @@
   <footer>
     <div class="footer-brand">Elysium &mdash; Jeff &amp; Lisa</div>
     <p>Estes Park, Colorado &nbsp;&middot;&nbsp; YMCA of the Rockies</p>
-    <a href="https://www.ymcarockies.org/our-locations/estes-park-center" target="_blank" rel="noopener">ymcarockies.org</a>
+    <a href="https://www.ymcarockies.org/our-locations/estes-park-center">ymcarockies.org</a>
   </footer>
 
   <script>
     const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity="1"; e.target.style.transform="translateY(0)"; } }); }, {threshold:0.1});
-    document.querySelectorAll('.about-text,.highlight-card,.gallery-item,.memory-item,.location-text').forEach(el => { el.style.cssText += 'opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;'; obs.observe(el); });
+    document.querySelectorAll('.about-text,.highlight-card,.gallery-item,.memory-item,.map-card,.location-text').forEach(el => { el.style.cssText += 'opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;'; obs.observe(el); });
   
     // Lightbox: click any memory image to open full-res
     (function(){
@@ -352,6 +436,21 @@
       lb.addEventListener('click', e => { if(e.target===lb || e.target===closeBtn) close(); });
       closeBtn.addEventListener('click', close);
       document.addEventListener('keydown', e => { if(e.key==='Escape') close(); });
+    })();
+
+    // Sticky top nav: appears once user scrolls past hero
+    (function(){
+      const nav = document.getElementById('topnav');
+      const hero = document.querySelector('.hero');
+      if(!nav || !hero) return;
+      const threshold = () => hero.offsetHeight * 0.6;
+      function update(){
+        if(window.scrollY > threshold()) nav.classList.add('is-visible');
+        else nav.classList.remove('is-visible');
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      window.addEventListener('resize', update);
+      update();
     })();
 
   </script>

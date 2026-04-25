@@ -68,6 +68,22 @@
     footer a:hover{color:var(--copper);}
     @media(max-width:800px){.about,.location{grid-template-columns:1fr;}.about-image{min-height:280px;order:-1;}.gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px;}.gallery-item.tall{grid-row:span 1;}footer{flex-direction:column;text-align:center;}}
     @media(max-width:500px){.gallery-grid{grid-template-columns:1fr;grid-template-rows:auto;}.gallery-item{height:220px;}.hero-badge{top:1rem;right:1rem;font-size:0.65rem;}}
+  
+    /* --- Memories from the Mountain (full scroll gallery) --- */
+    .memories{padding:5rem 6vw;background:var(--parchment);}
+    .memories .section-header{text-align:center;margin-bottom:3rem;max-width:680px;margin-left:auto;margin-right:auto;}
+    .memories .section-header p.intro{font-size:1.05rem;color:#3D3228;margin-top:0.6rem;font-style:italic;}
+    .memories-feed{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:1.4rem;}
+    .memory-item{margin:0;border-radius:2px;overflow:hidden;background:var(--stone);box-shadow:0 4px 18px rgba(44,62,45,0.08);cursor:zoom-in;}
+    .memory-item img{display:block;width:100%;height:auto;object-fit:cover;}
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(20,28,22,0.94);z-index:9999;display:none;align-items:center;justify-content:center;padding:2vw;cursor:zoom-out;}
+    .lightbox.is-open{display:flex;}
+    .lightbox img{max-width:96vw;max-height:94vh;object-fit:contain;box-shadow:0 0 60px rgba(0,0,0,0.6);}
+    .lightbox-close{position:absolute;top:1.2rem;right:1.4rem;background:transparent;border:1px solid rgba(244,239,228,0.4);color:var(--cream);font-size:1.4rem;width:2.4rem;height:2.4rem;line-height:1;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .lightbox-close:hover{border-color:var(--copper);color:var(--copper);}
+    @media(max-width:600px){.memories{padding:3.5rem 4vw;}.memories-feed{gap:1rem;}}
+
   </style>
 </head>
 <body>
@@ -121,6 +137,185 @@
     </div>
   </section>
 
+  
+  <section class="memories" id="memories">
+    <div class="section-header">
+      <p class="eyebrow">Memories from the Mountain</p>
+      <h2>For Years, <em>Our Mountain Place</em></h2>
+      <div class="section-divider"></div>
+      <p class="intro">For years, this Colorado home has been the place we go to slow down with the people we love. We've never put it up for auction before &mdash; but for the Fete, we wanted to share it. These photos are what we hope you'll get to feel.</p>
+    </div>
+    <div class="memories-feed">
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_6345.webp" data-full="photos/full/IMG_6345.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_2336_2.webp" data-full="photos/full/IMG_2336_2.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_6468.webp" data-full="photos/full/IMG_6468.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4235.webp" data-full="photos/full/IMG_4235.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_2142.webp" data-full="photos/full/IMG_2142.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/about.webp" data-full="photos/full/about.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1874.webp" data-full="photos/full/IMG_1874.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4512.webp" data-full="photos/full/IMG_4512.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4135.webp" data-full="photos/full/IMG_4135.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1449.webp" data-full="photos/full/IMG_1449.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1511_2.webp" data-full="photos/full/IMG_1511_2.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_2684.webp" data-full="photos/full/IMG_2684.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4138.webp" data-full="photos/full/IMG_4138.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/gallery1.webp" data-full="photos/full/gallery1.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4616.webp" data-full="photos/full/IMG_4616.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/DSC_0145.webp" data-full="photos/full/DSC_0145.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_2272.webp" data-full="photos/full/IMG_2272.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_6505.webp" data-full="photos/full/IMG_6505.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_0120__1_.webp" data-full="photos/full/IMG_0120__1_.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/hero.webp" data-full="photos/full/hero.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1463.webp" data-full="photos/full/IMG_1463.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4824.webp" data-full="photos/full/IMG_4824.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_2391.webp" data-full="photos/full/IMG_2391.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_6412.webp" data-full="photos/full/IMG_6412.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_2973.webp" data-full="photos/full/IMG_2973.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/2023-09-23-19-08-0014.webp" data-full="photos/full/2023-09-23-19-08-0014.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_2997.webp" data-full="photos/full/IMG_2997.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_6557.webp" data-full="photos/full/IMG_6557.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_2138.webp" data-full="photos/full/IMG_2138.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4783.webp" data-full="photos/full/IMG_4783.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/gallery4.webp" data-full="photos/full/gallery4.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_3270.webp" data-full="photos/full/IMG_3270.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1580.webp" data-full="photos/full/IMG_1580.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_5619.webp" data-full="photos/full/IMG_5619.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4566.webp" data-full="photos/full/IMG_4566.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/gallery2.webp" data-full="photos/full/gallery2.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1600.webp" data-full="photos/full/IMG_1600.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_6418.webp" data-full="photos/full/IMG_6418.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/gallery3.webp" data-full="photos/full/gallery3.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/DSC_0124.webp" data-full="photos/full/DSC_0124.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_3761.webp" data-full="photos/full/IMG_3761.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4932.webp" data-full="photos/full/IMG_4932.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_0581.webp" data-full="photos/full/IMG_0581.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_4756.webp" data-full="photos/full/IMG_4756.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_6466.webp" data-full="photos/full/IMG_6466.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_0848.webp" data-full="photos/full/IMG_0848.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1135.webp" data-full="photos/full/IMG_1135.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1621_3.webp" data-full="photos/full/IMG_1621_3.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1632.webp" data-full="photos/full/IMG_1632.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_2128.webp" data-full="photos/full/IMG_2128.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_6780.webp" data-full="photos/full/IMG_6780.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/DSCN1515.webp" data-full="photos/full/DSCN1515.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_1104.webp" data-full="photos/full/IMG_1104.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+      <figure class="memory-item">
+        <img src="photos/medium/IMG_6380.webp" data-full="photos/full/IMG_6380.webp" alt="" loading="lazy" decoding="async" />
+      </figure>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" alt="" />
+  </div>
+
   <section class="location" id="location">
     <div class="location-text">
       <p class="eyebrow">Location</p>
@@ -142,7 +337,23 @@
 
   <script>
     const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity="1"; e.target.style.transform="translateY(0)"; } }); }, {threshold:0.1});
-    document.querySelectorAll('.about-text,.highlight-card,.gallery-item,.location-text').forEach(el => { el.style.cssText += 'opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;'; obs.observe(el); });
+    document.querySelectorAll('.about-text,.highlight-card,.gallery-item,.memory-item,.location-text').forEach(el => { el.style.cssText += 'opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;'; obs.observe(el); });
+  
+    // Lightbox: click any memory image to open full-res
+    (function(){
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const closeBtn = document.getElementById('lightbox-close');
+      function open(src){ lbImg.src = src; lb.classList.add('is-open'); document.body.style.overflow='hidden'; }
+      function close(){ lb.classList.remove('is-open'); lbImg.src=''; document.body.style.overflow=''; }
+      document.querySelectorAll('.memory-item img').forEach(img=>{
+        img.addEventListener('click', ()=> open(img.dataset.full || img.src));
+      });
+      lb.addEventListener('click', e => { if(e.target===lb || e.target===closeBtn) close(); });
+      closeBtn.addEventListener('click', close);
+      document.addEventListener('keydown', e => { if(e.key==='Escape') close(); });
+    })();
+
   </script>
 </body>
 </html>

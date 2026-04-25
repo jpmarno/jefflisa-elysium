@@ -101,6 +101,10 @@
     .map-card .drive-time{display:inline-block;background:var(--copper);color:var(--white);padding:0.3rem 0.7rem;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.7rem;border-radius:2px;align-self:flex-start;}
 
     
+    
+    .map-embed{width:100%;aspect-ratio:16/10;background:var(--stone);border-radius:2px;overflow:hidden;margin-bottom:1rem;}
+    .map-embed iframe{width:100%;height:100%;border:0;display:block;filter:sepia(15%) saturate(90%);}
+
     .map-image-tap{position:relative;border:0;padding:0;cursor:zoom-in;background-color:var(--stone);}
     .map-image-tap .map-tap-hint{position:absolute;bottom:0.6rem;right:0.6rem;background:rgba(20,30,20,0.78);color:var(--cream);font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.35rem 0.65rem;border-radius:2px;pointer-events:none;}
 
@@ -198,17 +202,21 @@
         <a class="map-link" href="https://assets.milestoneinternet.com/ymca-of-the-rockies/ymca-of-the-rockies-estes-park-family-resort-and-cabins-394203-3/website-assets/pdf/2025-ymca-web-map-final.pdf">Open Y's Property Map &rarr;</a>
       </article>
       <article class="map-card">
-        <div class="map-image" style="background-image:url('photos/maps/area.jpg');" role="img" aria-label="YMCA in relation to RMNP and Estes Park"></div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps?q=YMCA+of+the+Rockies+Estes+Park+Center+2515+Tunnel+Rd,+Estes+Park,+CO+80511&z=11&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="YMCA of the Rockies, Rocky Mountain National Park, and Estes Park"></iframe>
+        </div>
         <h3>YMCA, RMNP &amp; Estes Park</h3>
         <p>The campus sits between Rocky Mountain National Park and the town of Estes Park &mdash; both within minutes.</p>
-        <a class="map-link" href="https://www.google.com/maps/place/YMCA+of+the+Rockies/@40.3206,-105.5826,13z">Open in Google Maps &rarr;</a>
+        <a class="map-link" href="https://www.google.com/maps/place/YMCA+of+the+Rockies/@40.3206,-105.5826,12z">Open in Google Maps &rarr;</a>
       </article>
       <article class="map-card">
-        <div class="map-image" style="background-image:url('photos/maps/drive.jpg');" role="img" aria-label="Drive from Denver International Airport"></div>
+        <div class="map-embed">
+          <iframe src="https://www.google.com/maps?saddr=Denver+International+Airport,+8500+Pe%C3%B1a+Blvd,+Denver,+CO+80249&daddr=YMCA+of+the+Rockies+Estes+Park+Center,+2515+Tunnel+Rd,+Estes+Park,+CO+80511&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Driving directions from Denver International Airport to YMCA of the Rockies"></iframe>
+        </div>
         <span class="drive-time">~1 hr 35 min from DIA</span>
         <h3>Drive from Denver</h3>
         <p>Denver International Airport to the YMCA: roughly 75 miles north and west, an easy drive of about 1 hour 35 minutes.</p>
-        <a class="map-link" href="https://www.google.com/maps/dir/Denver+International+Airport/YMCA+of+the+Rockies">Get Directions &rarr;</a>
+        <a class="map-link" href="https://www.google.com/maps/dir/Denver+International+Airport/YMCA+of+the+Rockies+Estes+Park+Center,+2515+Tunnel+Rd,+Estes+Park,+CO+80511">Open Full Directions &rarr;</a>
       </article>
     </div>
   </section>
